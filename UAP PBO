@@ -1,0 +1,86 @@
+    public class UAP {
+        public static void main (String[] args) {
+            Data.mulai();
+            Data.info();
+        }
+    }
+    import java.util.ArrayList;
+    import java.util.List;
+
+    class TanamanBuah {
+        private String nama;
+        private int masaHidup;
+        private int lamaHidup;
+        private double prosesBerbuah;
+        private double perkembangan;
+        private int buah;
+    }
+    public TanamanBuah(String nama, int masaHidup, int lamaHidup, double prosesBerbuah, double perkembangan, int buah){
+        this.nama = nama;
+        this.masaHidup = masaHidup;
+        this.lamaHidup = lamaHidup;
+        this.prosesBerbuah = prosesBerbuah;
+        this.perkembangan = perkembangan;
+        this.buah = buah;
+    }
+
+    public  void perawatan() {
+    //implement perawatan
+    }
+
+    public void perkembanganHarian() {
+        prosesBerbuah += perkembangan;
+        if (prosesBerbuah >100) {
+            buah ++;
+            prosesBerbuah -=100;
+        }
+
+    public double getProsesBerbuah(){
+        return prosesBerbuah;
+    }
+
+    public int getTotalBuah(){
+        return buah;
+    }
+}
+
+class Pekarangan {
+    private list<TanamanBuah> tanamanBuah;
+    private int masaTanam;
+}
+    public perkarangan 
+    public Pekarangan(int masaTanam) {
+        this.masaTanam = masaTanam;
+        this.tanamanBuah = new ArrayList<>();
+
+        // Initialize 3 tanamanBuah objects here
+    }
+
+    // Getters and setters for each attribute
+
+    public void tanamTanaman(TanamanBuah tanaman) {
+        tanamanBuah.add(tanaman);
+    }
+
+    public void gantiTanaman(int index, TanamanBuah tanaman) {
+        tanamanBuah.set(index, tanaman);
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            TanamanBuah tomat = new TanamanBuah("Tomat", 90, 0, 100, 0.5, 0);
+            TanamanBuah stroberi = new TanamanBuah("Stroberi", 60, 0, 150, 0.35, 0);
+            TanamanBuah persik = new TanamanBuah("Persik", 120, 0, 200, 0.6, 0);
+    
+            for (int i = 1; i <= 4; i++) {
+                System.out.println("Hari ke-" + i + " (umur " + i + " hari) :");
+                tomat.perkembanganHarian();
+                stroberi.perkembanganHarian();
+                persik.perkembanganHarian();
+    
+                System.out.println("o Tomat : prosesBerbuah = " + tomat.getProsesBerbuah() + ", buah = " + tomat.getTotalBuah());
+                System.out.println("o Stroberi: prosesBerbuah = " + stroberi.getProsesBerbuah() + ", buah = " + stroberi.getTotalBuah());
+                System.out.println("o Persik : prosesBerbuah = " + persik.getProsesBerbuah() + ", buah = " + persik.getTotalBuah());
+            }
+        }
+    }
